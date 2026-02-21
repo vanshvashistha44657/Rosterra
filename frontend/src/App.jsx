@@ -12,6 +12,7 @@ import RoasterResponse from './pages/RoasterResponse'
 import Layout from './components/Layout'
 import ProtectedRoute from './components/ProtectedRoute'
 import { useState } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -77,6 +78,7 @@ function App() {
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
             </Routes>
           </Router>
+          <Analytics />
         </DataProvider>
       </AuthProvider>
     </ThemeProvider>
